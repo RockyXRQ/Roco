@@ -1,50 +1,27 @@
 <template>
   <v-app>
-    <v-system-bar app color="deep-orange"></v-system-bar>
-    <v-container app>
-      <v-speed-dial
-        v-model="fab"
-        :bottom="true"
-        :right="true"
-        direction="left"
-        :open-on-hover="true"
-        transition="slide-x-transition"
-        id="real-nav"
-      >
-        <template v-slot:activator>
-          <v-btn v-model="fab" color="orange" large dark fab>
-            <v-icon v-if="fab">mdi-close</v-icon>
-            <v-icon v-else>mdi-apps</v-icon>
-          </v-btn>
-        </template>
-        <v-btn fab dark small color="red">
-          <v-icon>mdi-tools</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="indigo">
-          <v-icon>mdi-book-outline</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="green">
-          <v-icon>mdi-chart-timeline-variant</v-icon>
-        </v-btn>
-      </v-speed-dial>
-      <v-divider></v-divider>
-    </v-container>
+    <v-app-bar app dark color="#3930D8">
+      <v-img src="./assets/logo-white-no-shade.svg" max-width="60px" max-height="60px"></v-img>
+      <v-divider class="mx-4" dark inset vertical></v-divider>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-content app>
+      <floating-nav></floating-nav>
+      <router-view></router-view>
+    </v-content>
   </v-app>
 </template>
 <script>
-//import timeline from './components/timeline.vue';
+import FloatingNav from "./components/FloatingNav.vue";
 
 export default {
   name: "App",
 
   components: {
-    //timeline,
+    FloatingNav
   },
 
-  data: () => ({
-    bottomNav: "timeline",
-    fab: "false"
-  })
+  data: () => ({})
 };
 </script>
 
