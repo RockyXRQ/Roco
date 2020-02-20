@@ -1,52 +1,58 @@
 <template>
-  <v-container fluid>
-    <v-row justify="center">
-      <h1>没时间解释了！快上车！！！</h1>
-    </v-row>
-    <v-row justify="center">
-      <v-col cols="4">
-        <v-text-field
-          dense
-          outlined
-          v-model="streetName"
-          :counter="20"
-          :rules="streetNameRules"
-          label="Street Name"
-          required
-        ></v-text-field>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-col cols="4">
-        <v-text-field
-          dense
-          outlined
-          v-model="email"
-          :counter="25"
-          :rules="emailRules"
-          label="E-mail"
-          required
-        ></v-text-field>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-col cols="4">
-        <v-text-field
-          dense
-          type="password"
-          outlined
-          :counter="18"
-          v-model="password"
-          :rules="passwordRules"
-          label="Password"
-          required
-        ></v-text-field>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-btn dark color="orange">LINK START!!!</v-btn>
-    </v-row>
-  </v-container>
+  <v-card class="ma-auto" color="grey darken-3" max-width="600px">
+    <v-container fluid>
+      <v-row justify="center"></v-row>
+      <v-row justify="center">
+        <v-col cols="10">
+          <v-text-field
+            dark
+            color="#9147FF"
+            dense
+            outlined
+            v-model="streetName"
+            :counter="20"
+            :rules="streetNameRules"
+            label="Street Name"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="10">
+          <v-text-field
+            dark
+            color="#9147FF"
+            dense
+            outlined
+            v-model="email"
+            :counter="25"
+            :rules="emailRules"
+            label="E-mail"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="10">
+          <v-text-field
+            dark
+            color="#9147FF"
+            dense
+            type="password"
+            outlined
+            :counter="18"
+            v-model="password"
+            :rules="passwordRules"
+            label="Password"
+            required
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-btn light color="#9147FF">LINK START</v-btn>
+      </v-row>
+    </v-container>
+  </v-card>
 </template>
 
 <script>

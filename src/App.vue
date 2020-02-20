@@ -1,27 +1,36 @@
 <template>
   <v-app>
-    <v-app-bar app dark color="#3930D8">
-      <v-img src="./assets/logo-white-no-shade.svg" max-width="60px" max-height="60px"></v-img>
-      <v-divider class="mx-4" dark inset vertical></v-divider>
+    <v-app-bar app dense dark color="grey darken-4">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
+      <sign></sign>
+      <v-btn small outlined dark class="mx-2" icon color="white">
+        <v-icon>mdi-account</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-content app>
-      <floating-nav></floating-nav>
       <router-view></router-view>
     </v-content>
   </v-app>
 </template>
+
 <script>
-import FloatingNav from "./components/FloatingNav.vue";
+import Sign from "./components/Sign.vue"
 
 export default {
   name: "App",
 
   components: {
-    FloatingNav
+    Sign
   },
 
-  data: () => ({})
+  data: () => ({}),
+
+  methods: {
+    JumpTo(root) {
+      this.$router.push(root);
+    }
+  }
 };
 </script>
 
