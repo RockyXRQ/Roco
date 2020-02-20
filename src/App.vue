@@ -5,9 +5,7 @@
       <v-img src="./assets/logo.svg" max-width="30" max-height="30" class="mx-2"></v-img>
       <v-spacer></v-spacer>
       <sign></sign>
-      <v-btn small outlined dark class="mx-2" icon color="white">
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
+      <user></user>
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer" color="grey darken-4">
       <v-list rounded>
@@ -42,7 +40,7 @@
       </v-list>
       <template v-slot:append>
         <div class="ma-4">
-          <v-btn rounded dark depressed block color="#9147FF">
+          <v-btn rounded dark depressed block color="#9147FF" @click="JumpTo('/about')">
             <v-img src="./assets/logo-white.svg" max-width="27" max-height="27" class="mr-2"></v-img>About Roco.
           </v-btn>
         </div>
@@ -56,17 +54,21 @@
 
 <script>
 import Sign from "./components/Sign.vue";
+import User from "./components/User.vue";
 
 export default {
   name: "App",
 
   components: {
-    Sign
+    Sign,
+    User
   },
 
   data: () => ({
     drawer: false,
-    item: "null"
+    item: "null",
+    online: true,
+    avatarHref: "./assets/Rocky.png"
   }),
 
   methods: {
