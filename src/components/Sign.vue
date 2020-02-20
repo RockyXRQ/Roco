@@ -7,7 +7,7 @@
       class="mx-2"
       color="grey darken-3"
       @click.stop="dialog=true;tab='sign-in';"
-    >登录</v-btn>
+    >Sign In</v-btn>
     <v-btn
       small
       depressed
@@ -15,10 +15,11 @@
       class="mx-2"
       color="#9147FF"
       @click.stop="dialog=true;tab='sign-up';"
-    >注册</v-btn>
+    >Sign Up</v-btn>
     <v-dialog v-model="dialog" max-width="600">
       <v-card color="grey darken-4">
-        <v-card-title class="text-center justify-center py-6 white--text">
+        <v-card-title class="text-center py-6 white--text">
+          <v-img src="../assets/logo.svg" max-width="70" max-height="70" class="mx-8"></v-img>
           <h1>
             Welcome To
             <span class="my-purple-text">Roco</span>.
@@ -26,8 +27,8 @@
         </v-card-title>
 
         <v-tabs dark centered v-model="tab" background-color="grey darken-4" color="#9147FF">
-          <v-tab href="#sign-in">登录</v-tab>
-          <v-tab href="#sign-up">注册</v-tab>
+          <v-tab href="#sign-in">Sign In</v-tab>
+          <v-tab href="#sign-up">Sign Up</v-tab>
         </v-tabs>
 
         <v-tabs-items v-model="tab">
@@ -61,7 +62,9 @@
                 </v-col>
               </v-row>
               <v-row justify="center">
-                <v-btn dark color="#9147FF">LINK START</v-btn>
+                <v-col cols="10">
+                  <v-btn dark depressed block color="#9147FF">Sign In</v-btn>
+                </v-col>
               </v-row>
             </v-container>
           </v-tab-item>
@@ -115,7 +118,9 @@
                 </v-col>
               </v-row>
               <v-row justify="center">
-                <v-btn dark color="#9147FF">LINK START</v-btn>
+                <v-col cols="10">
+                  <v-btn dark depressed block color="#9147FF">Sign Up</v-btn>
+                </v-col>
               </v-row>
             </v-container>
           </v-tab-item>

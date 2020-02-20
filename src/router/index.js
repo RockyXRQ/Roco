@@ -4,7 +4,6 @@ import Timeline from '../views/Timeline.vue'
 import Settings from "../views/Settings.vue"
 import MyArticle from "../views/MyArticle.vue"
 //import Profile from "../views/Profile.vue"
-import SignInUp from "../views/SignInUp.vue"
 
 Vue.use(VueRouter)
 
@@ -21,10 +20,6 @@ const routes = [
     path: "/my-article",
     component: MyArticle
   },
-  {
-    path: "/signinup",
-    component: SignInUp
-  }
 ]
 
 const router = new VueRouter({
