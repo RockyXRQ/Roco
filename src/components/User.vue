@@ -12,7 +12,7 @@
             <v-img alt="avatar" src="../assets/Rocky.png"></v-img>
           </v-avatar>
           <v-avatar class="mx-auto mb-2" color="#9147FF" v-else>
-            <v-icon dark>mdi-account</v-icon>
+            <v-icon dark>mdi-account-circle</v-icon>
           </v-avatar>
         </v-list-item>
         <v-list-item dark v-if="isSignIn">
@@ -24,9 +24,15 @@
         <v-divider dark></v-divider>
         <v-list-item dark>
           <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
+            <v-icon>mdi-card-bulleted</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Profile</v-list-item-title>
+        </v-list-item>
+        <v-list-item dark>
+          <v-list-item-icon>
+            <v-icon>mdi-star</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Favorites</v-list-item-title>
         </v-list-item>
         <v-list-item dark>
           <v-list-item-icon>
