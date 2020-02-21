@@ -63,7 +63,7 @@
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn dark depressed block color="#9147FF">Sign In</v-btn>
+                  <v-btn dark depressed rounded block color="#9147FF">Sign In</v-btn>
                 </v-col>
               </v-row>
             </v-container>
@@ -119,7 +119,7 @@
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn dark depressed block color="#9147FF">Sign Up</v-btn>
+                  <v-btn dark depressed rounded block color="#9147FF">Sign Up</v-btn>
                 </v-col>
               </v-row>
             </v-container>

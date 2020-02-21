@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-menu open-on-click offset-y>
+    <v-menu open-on-hover offset-y>
       <template v-slot:activator="{ on }">
         <v-btn small dark class="mx-2" icon color="white" v-on="on">
           <v-icon>mdi-account</v-icon>
         </v-btn>
       </template>
-      <v-list color="grey darken-4">
+      <v-list rounded color="grey darken-4">
         <v-list-item>
           <v-avatar class="mx-auto mb-2" color="#9147FF" v-if="isSignIn">
             <v-img alt="avatar" src="../assets/Rocky.png"></v-img>
@@ -18,23 +18,23 @@
         <v-list-item dark v-if="isSignIn">
           <v-list-item-title>Online</v-list-item-title>
           <v-list-item-action>
-            <v-switch color="#9147FF" class="mr-6" v-model="isOnLine"></v-switch>
+            <v-switch color="#9147FF" class="mr-6" v-model="isOnline"></v-switch>
           </v-list-item-action>
         </v-list-item>
-        <v-divider dark></v-divider>
-        <v-list-item dark>
+        <v-divider dark v-if="isSignIn||isOnline"></v-divider>
+        <v-list-item dark v-if="isOnline" @click="JumpTo('/profile')">
           <v-list-item-icon>
             <v-icon>mdi-card-bulleted</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Profile</v-list-item-title>
         </v-list-item>
-        <v-list-item dark>
+        <v-list-item dark v-if="isOnline" @click="JumpTo('/favorites')">
           <v-list-item-icon>
             <v-icon>mdi-star</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Favorites</v-list-item-title>
         </v-list-item>
-        <v-list-item dark>
+        <v-list-item dark v-if="isSignIn" @click="isSignIn=false;isOnline=false">
           <v-list-item-icon>
             <v-icon>mdi-logout-variant</v-icon>
           </v-list-item-icon>
@@ -48,9 +48,14 @@
 <script>
 export default {
   data: () => ({
-    isOnLine: false,
+    isOnline: false,
     isSignIn: true
-  })
+  }),
+  methods: {
+    JumpTo(root) {
+      this.$router.push(root);
+    }
+  }
 };
 </script>
 
