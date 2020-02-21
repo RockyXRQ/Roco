@@ -1,5 +1,19 @@
 <template>
   <v-app>
+    <v-fab-transition>
+      <v-btn
+        color="#9147FF"
+        class="mr-12 mb-10"
+        dark
+        fixed
+        fab
+        right
+        bottom
+        @click="JumpTo('/write')"
+      >
+        <v-icon>mdi-pen</v-icon>
+      </v-btn>
+    </v-fab-transition>
     <v-app-bar app dense dark color="grey darken-4">
       <v-app-bar-nav-icon @click.stop="drawer=true"></v-app-bar-nav-icon>
       <v-img src="./assets/logo.svg" max-width="30" max-height="30" class="mx-2"></v-img>
