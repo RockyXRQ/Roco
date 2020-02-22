@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card dark class="my-5 mx-auto" color="grey darken-4" max-width="600">
+    <v-card  class="my-5 mx-auto" color="grey darken-4" dark max-width="600">
       <v-card-title>Appearance</v-card-title>
       <v-list dark>
         <v-list-item-group>
@@ -14,7 +14,7 @@
         </v-list-item-group>
       </v-list>
     </v-card>
-    <v-card dark class="my-5 mx-auto" color="grey darken-4" max-width="600">
+    <v-card class="my-5 mx-auto" color="grey darken-4" dark max-width="600">
       <v-card-title>Reading Habits</v-card-title>
       <v-list dark>
         <v-list-item-group>
@@ -33,12 +33,10 @@
 
 <script>
 export default {
+  name:"settings",
   data: () => ({
     isDarkMode: true,
     isCancelId: false
   })
 };
 </script>
-
-<style scoped>
-</style>

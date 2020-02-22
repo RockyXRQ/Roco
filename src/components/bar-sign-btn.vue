@@ -1,32 +1,32 @@
 <template>
   <div>
     <v-btn
-      small
-      depressed
-      dark
       class="mx-2"
       color="grey darken-3"
-      @click.stop="dialog=true;tab='sign-in';"
+      dark
+      depressed
+      small
+      @click="dialog=true;tab='sign-in'"
     >Sign In</v-btn>
     <v-btn
-      small
-      depressed
-      dark
       class="mx-2"
       color="#9147FF"
-      @click.stop="dialog=true;tab='sign-up';"
+      dark
+      depressed
+      small
+      @click="dialog=true;tab='sign-up'"
     >Sign Up</v-btn>
     <v-dialog v-model="dialog" max-width="600">
       <v-card color="grey darken-4">
         <v-card-title class="text-center py-6 white--text">
-          <v-img src="../assets/logo.svg" max-width="70" max-height="70" class="mx-8"></v-img>
+          <v-img class="mx-8" max-height="70" max-width="70" src="../assets/logo.svg"></v-img>
           <h1>
             Welcome To
             <span class="my-purple-text">Roco</span>.
           </h1>
         </v-card-title>
 
-        <v-tabs dark centered v-model="tab" background-color="grey darken-4" color="#9147FF">
+        <v-tabs background-color="grey darken-4" centered color="#9147FF" dark v-model="tab">
           <v-tab href="#sign-in">Sign In</v-tab>
           <v-tab href="#sign-up">Sign Up</v-tab>
         </v-tabs>
@@ -37,33 +37,33 @@
               <v-row justify="center">
                 <v-col cols="10">
                   <v-text-field
-                    light
                     color="#9147FF"
                     dense
-                    outlined
-                    v-model="inEmail"
                     label="E-mail"
+                    light
+                    outlined
                     required
+                    v-model="inEmail"
                   ></v-text-field>
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
                   <v-text-field
-                    light
                     color="#9147FF"
                     dense
-                    type="password"
-                    outlined
-                    v-model="inPassword"
                     label="Password"
+                    light
+                    outlined
                     required
+                    type="password"
+                    v-model="inPassword"
                   ></v-text-field>
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn dark depressed rounded block color="#9147FF">Sign In</v-btn>
+                  <v-btn color="#9147FF" block dark depressed rounded>Sign In</v-btn>
                 </v-col>
               </v-row>
             </v-container>
@@ -74,52 +74,52 @@
               <v-row justify="center">
                 <v-col cols="10">
                   <v-text-field
-                    light
                     color="#9147FF"
+                    counter="20"
                     dense
-                    outlined
-                    v-model="upNickName"
-                    :counter="20"
-                    :rules="nickNameRules"
                     label="Nick Name"
+                    light
+                    outlined
                     required
+                    v-model="upNickName"
+                    :rules="nickNameRules"
                   ></v-text-field>
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
                   <v-text-field
-                    light
                     color="#9147FF"
+                    counter="25"
                     dense
-                    outlined
-                    v-model="upEmail"
-                    :counter="25"
-                    :rules="emailRules"
                     label="E-mail"
+                    light
+                    outlined
                     required
+                    v-model="upEmail"
+                    :rules="emailRules"
                   ></v-text-field>
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
                   <v-text-field
-                    light
                     color="#9147FF"
+                    counter="18"
                     dense
-                    type="password"
+                    label="Password"
+                    light
                     outlined
-                    :counter="18"
+                    required
+                    type="password"
                     v-model="upPassword"
                     :rules="passwordRules"
-                    label="Password"
-                    required
                   ></v-text-field>
                 </v-col>
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn dark depressed rounded block color="#9147FF">Sign Up</v-btn>
+                  <v-btn block color="#9147FF" dark depressed rounded>Sign Up</v-btn>
                 </v-col>
               </v-row>
             </v-container>
@@ -132,6 +132,8 @@
 
 <script>
 export default {
+  name: "bar-sign-btn",
+
   data: () => ({
     dialog: false,
     tab: null,

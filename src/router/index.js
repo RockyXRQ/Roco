@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Timeline from '../views/Timeline.vue'
-import Settings from "../views/Settings.vue"
-import MyArticle from "../views/MyArticle.vue"
-import Profile from "../views/Profile.vue"
-import Write from "../views/Write.vue"
-import Favorites from "../views/Favorites.vue"
-import About from "../views/About.vue"
+import Timeline from '../views/timeline/timeline.vue'
+import Settings from "../views/settings.vue"
+import MyArticle from "../views/my-article.vue"
+import Profile from "../views/profile.vue"
+import Write from "../views/write.vue"
+import Favorites from "../views/favorites.vue"
+import About from "../views/about/about.vue"
 
 Vue.use(VueRouter)
 

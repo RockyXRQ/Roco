@@ -1,4 +1,4 @@
-# roco
+# Roco
 
 ## Project setup
 ```

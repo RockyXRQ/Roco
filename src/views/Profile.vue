@@ -9,33 +9,33 @@
             </v-avatar>
             <v-file-input
               class="mx-11"
+              accept="image/png, image/jpeg, image/bmp"
               dark
               dense
-              accept="image/png, image/jpeg, image/bmp"
+              color="#9147FF"
               placeholder="Upload"
               prepend-icon="mdi-camera"
-              color="#9147FF"
             ></v-file-input>
           </v-col>
           <v-col cols="8">
             <v-card class="mr-6" flat color="grey darken-4">
               <v-text-field
                 class="ma-auto"
-                dark
-                label="Nick Name"
                 color="#9147FF"
-                :value="nickName"
-                outlined
+                dark
                 dense
+                label="Nick Name"
+                outlined
+                :value="nickName"
               ></v-text-field>
               <v-text-field
                 class="ma-auto"
-                dark
-                label="E-mail"
                 color="#9147FF"
-                :value="email"
-                outlined
+                dark
                 dense
+                label="E-mail"
+                outlined
+                :value="email"
               ></v-text-field>
             </v-card>
           </v-col>
@@ -45,12 +45,12 @@
             <v-card class="mx-6" flat color="grey darken-4">
               <v-textarea
                 auto-grow
-                dark
-                outlined
                 clearable
+                color="#9147FF"
+                dark
                 dense
                 label="Bio"
-                color="#9147FF"
+                outlined
                 :value="bio"
               ></v-textarea>
             </v-card>
@@ -58,10 +58,10 @@
         </v-row>
         <v-row class="mx-auto">
           <v-col class="mx-auto" cols="4">
-            <v-btn rounded block dark color="#9147FF">Save</v-btn>
+            <v-btn color="#9147FF" block dark rounded>Save</v-btn>
           </v-col>
           <v-col class="mx-auto" cols="4">
-            <v-btn rounded block dark color="grey darken-3">Restore</v-btn>
+            <v-btn color="grey darken-3" block dark rounded>Restore</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -71,6 +71,7 @@
 
 <script>
 export default {
+  name:"profile",
   data: () => ({
     nickName: "Rocky",
     email: "1315930212@qq.com",

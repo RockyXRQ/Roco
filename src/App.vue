@@ -1,69 +1,22 @@
 <template>
   <v-app>
-    <v-fab-transition>
-      <v-btn
-        color="#9147FF"
-        class="mr-12 mb-10"
-        dark
-        fixed
-        fab
-        right
-        large
-        bottom
-        @click="JumpTo('/write');activeFab='mdi-content-save'"
-      >
-        <v-icon>{{activeFab}}</v-icon>
-      </v-btn>
-    </v-fab-transition>
+    <app-flt-btn></app-flt-btn>
 
-    <v-app-bar app dense dark color="grey darken-4">
+    <v-app-bar app dark dense color="grey darken-4">
       <v-app-bar-nav-icon @click.stop="drawer=true"></v-app-bar-nav-icon>
       <v-img src="./assets/logo.svg" max-width="30" max-height="30" class="mx-2"></v-img>
       <v-spacer></v-spacer>
-      <sign></sign>
-      <user></user>
+      <bar-sign-btn></bar-sign-btn>
+      <bar-user-btn></bar-user-btn>
     </v-app-bar>
 
-    <v-navigation-drawer app v-model="drawer" color="grey darken-4">
-      <v-list rounded>
-        <v-img class="mx-auto mb-5 mt-3" src="./assets/logo.svg" max-width="60" max-height="60"></v-img>
-        <v-divider dark></v-divider>
+    <v-navigation-drawer app dark color="grey darken-4" v-model="drawer">
+      <v-img class="mx-auto mb-5 mt-3" src="./assets/logo.svg" max-width="60" max-height="60"></v-img>
+      <v-divider></v-divider>
+      <nav-top-list></nav-top-list>
 
-        <v-list-item-group v-model="item">
-          <v-list-item dark color="#9147FF" @click="JumpTo('/');activeFab='mdi-pen'">
-            <v-list-item-icon>
-              <v-icon>mdi-chart-timeline-variant</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Timeline</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item dark color="#9147FF" @click="JumpTo('/my-article')">
-            <v-list-item-icon>
-              <v-icon>mdi-book-outline</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>My Article</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item dark color="#9147FF" @click="JumpTo('/settings')">
-            <v-list-item-icon>
-              <v-icon>mdi-cogs</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>Settings</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
       <template v-slot:append>
-        <div class="ma-4">
-          <v-btn rounded dark depressed block color="#9147FF" @click="JumpTo('/about')">
-            <v-img src="./assets/logo-white.svg" max-width="27" max-height="27" class="mr-2"></v-img>About Roco.
-          </v-btn>
-        </div>
+        <nav-bottom-btn></nav-bottom-btn>
       </template>
     </v-navigation-drawer>
 
@@ -74,32 +27,27 @@
 </template>
 
 <script>
-import Sign from "./components/Sign.vue";
-import User from "./components/User.vue";
+import AppFltBtn from "./components/app-flt-btn.vue";
+
+import BarSignBtn from "./components/bar-sign-btn.vue";
+import BarUserBtn from "./components/bar-user-btn.vue";
+
+import NavTopList from "./components/nav-top-list.vue";
+import NavBottomBtn from "./components/nav-bottom-btn.vue";
 
 export default {
   name: "App",
 
   components: {
-    Sign,
-    User
+    AppFltBtn,
+    BarSignBtn,
+    BarUserBtn,
+    NavTopList,
+    NavBottomBtn
   },
 
   data: () => ({
-    drawer: false,
-    item: "null",
-    online: true,
-    avatarHref: "./assets/Rocky.png",
-    activeFab: "mdi-pen"
-  }),
-
-  methods: {
-    JumpTo(root) {
-      this.$router.push(root);
-    }
-  }
+    drawer: false
+  })
 };
 </script>
-
-<style scoped>
-</style>
