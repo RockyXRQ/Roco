@@ -4,6 +4,9 @@ import Timeline from '../views/Timeline.vue'
 import Settings from "../views/Settings.vue"
 import MyArticle from "../views/MyArticle.vue"
 import Profile from "../views/Profile.vue"
+import Write from "../views/Write.vue"
+import Favorites from "../views/Favorites.vue"
+import About from "../views/About.vue"
 
 Vue.use(VueRouter)
 
@@ -23,6 +26,18 @@ const routes = [
   {
     path: "/profile",
     component: Profile
+  },
+  {
+    path: "/write",
+    component: Write
+  },
+  {
+    path: "/favorites",
+    component: Favorites
+  },
+  {
+    path: "/about",
+    component: About
   }
 ]
 

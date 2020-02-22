@@ -8,12 +8,14 @@
         fixed
         fab
         right
+        large
         bottom
-        @click="JumpTo('/write')"
+        @click="JumpTo('/write');activeFab='mdi-content-save'"
       >
-        <v-icon>mdi-pen</v-icon>
+        <v-icon>{{activeFab}}</v-icon>
       </v-btn>
     </v-fab-transition>
+
     <v-app-bar app dense dark color="grey darken-4">
       <v-app-bar-nav-icon @click.stop="drawer=true"></v-app-bar-nav-icon>
       <v-img src="./assets/logo.svg" max-width="30" max-height="30" class="mx-2"></v-img>
@@ -21,12 +23,14 @@
       <sign></sign>
       <user></user>
     </v-app-bar>
+
     <v-navigation-drawer app v-model="drawer" color="grey darken-4">
       <v-list rounded>
         <v-img class="mx-auto mb-5 mt-3" src="./assets/logo.svg" max-width="60" max-height="60"></v-img>
-        <v-divider></v-divider>
+        <v-divider dark></v-divider>
+
         <v-list-item-group v-model="item">
-          <v-list-item dark color="#9147FF" @click="JumpTo('/')">
+          <v-list-item dark color="#9147FF" @click="JumpTo('/');activeFab='mdi-pen'">
             <v-list-item-icon>
               <v-icon>mdi-chart-timeline-variant</v-icon>
             </v-list-item-icon>
@@ -34,6 +38,7 @@
               <v-list-item-title>Timeline</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
           <v-list-item dark color="#9147FF" @click="JumpTo('/my-article')">
             <v-list-item-icon>
               <v-icon>mdi-book-outline</v-icon>
@@ -42,6 +47,7 @@
               <v-list-item-title>My Article</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
           <v-list-item dark color="#9147FF" @click="JumpTo('/settings')">
             <v-list-item-icon>
               <v-icon>mdi-cogs</v-icon>
@@ -60,6 +66,7 @@
         </div>
       </template>
     </v-navigation-drawer>
+
     <v-content app>
       <router-view></router-view>
     </v-content>
@@ -82,7 +89,8 @@ export default {
     drawer: false,
     item: "null",
     online: true,
-    avatarHref: "./assets/Rocky.png"
+    avatarHref: "./assets/Rocky.png",
+    activeFab: "mdi-pen"
   }),
 
   methods: {

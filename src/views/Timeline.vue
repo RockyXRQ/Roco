@@ -67,7 +67,7 @@ export default {
     title: "Welcome to Roco!",
     writer: "Roco_official",
     content:
-      "Roco, the web app with blog, todo-list, and any tools a geek worker will need."
+      "Roco, the web app with blog, todo-list, and any tools a geek worker will need. :^）"
   }),
   methods: {
     JumpTo(root) {
