@@ -9,8 +9,17 @@
 <script>
 export default {
   name: "app-flt-btn",
-  data: () => ({
-    activeIcon: "mdi-pen"
-  })
+  computed: {
+    activeIcon() {
+      return this.$store.state.activeIcon;
+    }
+  },
+  methods: {
+    ToWrite() {
+      this.$store.dispatch("CheckOnline").then(() => {
+        this.$router.push("/write");
+      });
+    }
+  }
 };
 </script>

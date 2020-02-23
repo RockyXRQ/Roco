@@ -63,7 +63,7 @@
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn color="#9147FF" block dark depressed rounded>Sign In</v-btn>
+                  <v-btn color="#9147FF" block dark depressed rounded @click="SignIn()">Sign In</v-btn>
                 </v-col>
               </v-row>
             </v-container>
@@ -119,7 +119,7 @@
               </v-row>
               <v-row justify="center">
                 <v-col cols="10">
-                  <v-btn block color="#9147FF" dark depressed rounded>Sign Up</v-btn>
+                  <v-btn block color="#9147FF" dark depressed rounded @click="SignUp()">Sign Up</v-btn>
                 </v-col>
               </v-row>
             </v-container>
@@ -159,7 +159,28 @@ export default {
         (v.length >= 6 && v.length <= 18) ||
         "Password must be less than 18 characters"
     ]
-  })
+  }),
+
+  methods: {
+    SignIn() {
+      this.$store
+        .dispatch("SignIn", { email: this.inEmail, password: this.inPassword })
+        .then(() => {
+          this.$router.push("/");
+        });
+    },
+    SignUp() {
+      this.$store
+        .dispatch("SignUp", {
+          nickName: this.upNickName,
+          email: this.upEmail,
+          password: this.upPassword
+        })
+        .then(() => {
+          this.$router.push("/");
+        });
+    }
+  }
 };
 </script>
 
