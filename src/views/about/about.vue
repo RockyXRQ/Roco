@@ -4,7 +4,7 @@
       <v-card-title class="headline">About Roco.</v-card-title>
       <v-img class="mx-auto" src="../../assets/logo.svg" max-height="300" max-width="300"></v-img>
 
-      <v-card-title class="title yellow--text">· Special Thanks to:</v-card-title>
+      <div class="title yellow--text ml-4">· Special Thanks to:</div>
       <div class="body-1 ml-8" v-for="(helper,num) in helpers" :key="num">☆ {{helper}}.</div>
 
       <about-log-card v-for="l in logs" :key="l.ver" :log="l"></about-log-card>

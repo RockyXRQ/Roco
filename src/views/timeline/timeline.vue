@@ -21,7 +21,7 @@ export default {
           head: "Welcome to Roco!",
           cover: require("../../assets/roco_desktop.png"),
           subHead: "Rocky",
-          content: "Roco record the future",
+          content: "Roco record the future.",
           route: ""
         }
       ]

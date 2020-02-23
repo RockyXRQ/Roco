@@ -5,7 +5,7 @@
         <v-row>
           <v-col cols="4">
             <v-avatar class="ml-11" size="80">
-              <v-img src="../assets/Rocky.png"></v-img>
+              <v-img :src="user.avatar"></v-img>
             </v-avatar>
             <v-file-input
               class="mx-11"
@@ -26,7 +26,7 @@
                 dense
                 label="Nick Name"
                 outlined
-                :value="nickName"
+                :value="user.nickName"
               ></v-text-field>
               <v-text-field
                 class="ma-auto"
@@ -35,7 +35,7 @@
                 dense
                 label="E-mail"
                 outlined
-                :value="email"
+                :value="user.email"
               ></v-text-field>
             </v-card>
           </v-col>
@@ -51,7 +51,7 @@
                 dense
                 label="Bio"
                 outlined
-                :value="bio"
+                :value="user.bio"
               ></v-textarea>
             </v-card>
           </v-col>
@@ -71,11 +71,16 @@
 
 <script>
 export default {
-  name:"profile",
-  data: () => ({
-    nickName: "Rocky",
-    email: "1315930212@qq.com",
-    bio: "This people is great.  :^)"
-  })
+  name: "profile",
+  data: () => {
+    return {
+      user: {
+        nickName: "Rocky",
+        avatar: require("../assets/Rocky.png"),
+        email: "1315930212@qq.com",
+        bio: "This people is great.  :^)"
+      }
+    };
+  }
 };
 </script>
