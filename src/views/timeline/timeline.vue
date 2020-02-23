@@ -12,20 +12,11 @@ export default {
   components: {
     TimelineCard
   },
-  data: () => {
-    return {
-      articles: [
-        {
-          id: 0,
-          authorAvatar: require("../../assets/Rocky.png"),
-          head: "Welcome to Roco!",
-          cover: require("../../assets/roco_desktop.png"),
-          subHead: "Rocky",
-          content: "Roco record the future.",
-          route: ""
-        }
-      ]
-    };
+  
+  computed:{
+    articles(){
+      return this.$store.state.timelineArticles;
+    }
   }
 };
 </script>

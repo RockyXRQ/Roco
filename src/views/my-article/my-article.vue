@@ -49,19 +49,17 @@ export default {
     MyArticleListItem,
     MyArticleShowItem
   },
+
   data: () => {
     return {
-      chosedItem: 0,
-      items: [
-        {
-          id: 0,
-          head: "Welcome to Roco!",
-          subHead: "Rocky",
-          content: "Roco record the future.",
-          route: ""
-        }
-      ]
+      chosedItem: 0
     };
+  },
+
+  computed: {
+    items() {
+      return this.$store.state.user.myArticles;
+    }
   }
 };
 </script>

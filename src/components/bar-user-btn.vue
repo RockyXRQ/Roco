@@ -68,14 +68,14 @@ export default {
       });
     },
 
-    ToUserPage(root) {
+    ToUserPage(route) {
       this.$store.dispatch("CheckOnline").then(() => {
-        this.$router.push(root);
+        this.$router.push(route);
       });
     },
 
     ChangeOnline() {
-      this.$store.dispatch("ChangeOnline", { isOnline: this.isOnline });
+      this.$store.dispatch("ChangeOnline");
     }
   }
 };

@@ -49,20 +49,17 @@ export default {
     FavoritesListItem,
     FavoritesShowItem
   },
+  
   data: () => {
     return {
-      chosedItem: 0,
-      items: [
-        {
-          id: 0,
-          authorAvatar: require("../../assets/Rocky.png"),
-          head: "Welcome to Roco!",
-          subHead: "Rocky",
-          content: "Roco record the future.",
-          route: ""
-        }
-      ]
+      chosedItem: 0
     };
+  },
+
+  computed: {
+    items() {
+      return this.$store.state.user.favArticles;
+    }
   }
 };
 </script>

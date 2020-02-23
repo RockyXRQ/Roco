@@ -72,15 +72,10 @@
 <script>
 export default {
   name: "profile",
-  data: () => {
-    return {
-      user: {
-        nickName: "Rocky",
-        avatar: require("../assets/Rocky.png"),
-        email: "1315930212@qq.com",
-        bio: "This people is great.  :^)"
-      }
-    };
+  computed:{
+    user(){
+      return this.$store.state.user;
+    }
   }
 };
 </script>

@@ -4,7 +4,7 @@
     color="grey darken-4"
     dark
     max-width="560"
-    @click="JumpTo(article.route)"
+    @click="ToArticle(article.route)"
   >
     <v-list-item>
       <v-list-item-avatar color="grey">
@@ -21,7 +21,7 @@
     <v-card-text>{{article.content}}</v-card-text>
 
     <v-card-actions>
-      <v-btn class="ml-2" color="#9147FF" depressed>Read</v-btn>
+      <v-btn class="ml-2" color="#9147FF" depressed @click="ToArticle(article.route)">Read</v-btn>
       <v-spacer></v-spacer>
       <v-btn color="red" icon>
         <v-icon>mdi-heart</v-icon>
@@ -56,7 +56,7 @@ export default {
     }
   },
   methods: {
-    JumpTo(route) {
+    ToArticle(route) {
       this.$router.push(route);
     }
   }
