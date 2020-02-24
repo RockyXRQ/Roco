@@ -64,8 +64,39 @@ export default new Vuex.Store({
     ChangeTextToUpload(state, text) {
       state.textToUpload = text;
     },
-
+    ChangeProfile(state, newAvatar, newNickName, newBio) {
+      state.user.avatar = newAvatar;
+      state.user.nickName = newNickName;
+      state.user.bio = newBio;
+    }
   },
   actions: {
+    CheckOnline({ commit }) {
+
+    },
+    SignIn({ commit }, email, password) {
+
+    },
+    SignUp({ commit }, nickName, email, password) {
+
+    },
+    LogOut({ commit }) {
+
+    },
+    ChangeOnline({ commit }) {
+
+    },
+    SaveProfile({ commit }) {
+
+    },
+    ChangeDark({ commit }) {
+
+    },
+    ChangeCancelId({ commit }) {
+
+    },
+    ChangeTextToUpload({ commit }, text) {
+
+    }
   },
 })

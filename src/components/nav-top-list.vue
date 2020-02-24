@@ -1,6 +1,6 @@
 <template>
   <v-list rounded>
-    <v-list-item-group v-model="item">
+    <v-list-item-group>
       <v-list-item color="#9147FF" dark @click="ToTimeline()">
         <v-list-item-icon>
           <v-icon>mdi-chart-timeline-variant</v-icon>
