@@ -42,12 +42,30 @@ export default new Vuex.Store({
       isDarkMode: true,
       isCancelId: false
     },
+
     textToUpload: ""
   },
   mutations: {
+    ChangeFtlBtnIcon(state) {
+      state.activeIcon = (state.activeIcon === "mdi-pen" ? "mdi-content-save" : "mdi-pen");
+    },
+    ChangeDarkMode(state) {
+      state.settings.isDarkMode = !state.settings.isDarkMode;
+    },
+    ChangeCancelIdMode(state) {
+      state.settings.isCancelId = !state.settings.isCancelId;
+    },
+    ChangeSignInMode(state) {
+      state.user.isSignIn = !state.user.isSignIn;
+    },
+    ChangeOnlineMode(state) {
+      state.user.isOnline = !state.user.isOnline;
+    },
+    ChangeTextToUpload(state, text) {
+      state.textToUpload = text;
+    },
+
   },
   actions: {
   },
-  modules: {
-  }
 })

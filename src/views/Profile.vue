@@ -5,7 +5,7 @@
         <v-row>
           <v-col cols="4">
             <v-avatar class="ml-11" size="80">
-              <v-img :src="user.avatar"></v-img>
+              <v-img :src="avatar"></v-img>
             </v-avatar>
             <v-file-input
               class="mx-11"
@@ -26,7 +26,7 @@
                 dense
                 label="Nick Name"
                 outlined
-                :value="user.nickName"
+                v-model="nickName"
               ></v-text-field>
               <v-text-field
                 class="ma-auto"
@@ -35,7 +35,8 @@
                 dense
                 label="E-mail"
                 outlined
-                :value="user.email"
+                readonly
+                :value="email"
               ></v-text-field>
             </v-card>
           </v-col>
@@ -51,17 +52,17 @@
                 dense
                 label="Bio"
                 outlined
-                :value="user.bio"
+                v-model="bio"
               ></v-textarea>
             </v-card>
           </v-col>
         </v-row>
         <v-row class="mx-auto">
           <v-col class="mx-auto" cols="4">
-            <v-btn color="#9147FF" block dark rounded>Save</v-btn>
+            <v-btn color="#9147FF" block dark rounded @click="SaveProfile()">Save</v-btn>
           </v-col>
           <v-col class="mx-auto" cols="4">
-            <v-btn color="grey darken-3" block dark rounded>Restore</v-btn>
+            <v-btn color="grey darken-3" block dark rounded @click="RestoreProfile()">Restore</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -72,9 +73,34 @@
 <script>
 export default {
   name: "profile",
-  computed:{
-    user(){
-      return this.$store.state.user;
+
+  data: () => {
+    return {
+      avatar: "",
+      nickName: "",
+      email: "",
+      bio: ""
+    };
+  },
+
+  created: function() {
+    this.avatar = this.$store.state.user.avatar;
+    this.nickName = this.$store.state.user.nickName;
+    this.email = this.$store.state.user.email;
+    this.bio = this.$store.state.user.bio;
+  },
+
+  methods: {
+    RestoreProfile() {
+      this.nickName = this.$store.state.user.nickName;
+      this.bio = this.$store.state.user.bio;
+    },
+
+    SaveProfile() {
+      this.$store.dispatch("SaveProfile", {
+        newNickName: this.nickName,
+        newBio: this.bio
+      });
     }
   }
 };

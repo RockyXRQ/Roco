@@ -12,9 +12,9 @@ export default {
   components: {
     TimelineCard
   },
-  
-  computed:{
-    articles(){
+
+  computed: {
+    articles() {
       return this.$store.state.timelineArticles;
     }
   }
