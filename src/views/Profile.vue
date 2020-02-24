@@ -92,12 +92,14 @@ export default {
 
   methods: {
     RestoreProfile() {
+      this.avatar = this.$store.state.user.avatar;
       this.nickName = this.$store.state.user.nickName;
       this.bio = this.$store.state.user.bio;
     },
 
     SaveProfile() {
       this.$store.dispatch("SaveProfile", {
+        newAvatar: this.avatar,
         newNickName: this.nickName,
         newBio: this.bio
       });
